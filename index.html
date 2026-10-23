@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annabium - الموقع الرسمي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط التنقل العلوي -->
+    <header>
+    <!-- قسم الشعار -->
+    <div class="logo">
+        <a href="#">
+            <img src="images/logo-light.png" alt="Annabium Logo" id="site-logo">
+        </a>
+    </div>
+
+    <!-- شريط التنقل العلوي -->
+    <nav>
+        <ul>
+            <li><a href="#about" data-en="About Us" data-fr="À propos" data-ar="من نحن">من نحن</a></li>
+            <li><a href="#services" data-en="Services" data-fr="Services" data-ar="خدماتنا">خدماتنا</a></li>
+            <li><a href="#features" data-en="Our Advantages" data-fr="Nos Avantages" data-ar="نقاط قوتنا">نقاط قوتنا</a></li>
+            <li><a href="#vision" data-en="Vision" data-fr="Vision" data-ar="الرؤية">الرؤية</a></li>
+            <li><a href="#roadmap" data-en="Roadmap" data-fr="Feuille de route" data-ar="خارطة الطريق">خارطة الطريق</a></li>
+            <!--<li><a href="#gallery" data-en="Gallery" data-fr="Galerie" data-ar="معرض الصور">معرض الصور</a></li>-->
+            <li><a href="#contact" data-en="Contact" data-fr="Contact" data-ar="تواصل معنا">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- أزرار التحكم (اللغات + Dark Mode) -->
+    <div class="header-controls">
+        <!-- قائمة اللغات المخصصة بالأعلام -->
+        <div class="custom-lang-dropdown">
+            <button class="lang-btn" id="current-lang-btn" onclick="toggleLangMenu(event)">
+                <img src="https://flagcdn.com/w20/dz.png" alt="DZ Flag" class="flag-img">
+                <span> AR</span>
+                <small>▼</small>
+            </button>
+            <div class="lang-options" id="langOptionsList">
+                <div class="lang-option" onclick="selectLang('ar', 'https://flagcdn.com/w20/dz.png', ' AR')">
+                    <img src="https://flagcdn.com/w20/dz.png" alt="Algeria Flag" class="flag-img">
+                    <span> AR</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('en', 'https://flagcdn.com/w20/gb.png', ' EN')">
+                    <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag" class="flag-img">
+                    <span> EN</span>
+                </div>
+                <div class="lang-option" onclick="selectLang('fr', 'https://flagcdn.com/w20/fr.png', ' FR')">
+                    <img src="https://flagcdn.com/w20/fr.png" alt="France Flag" class="flag-img">
+                    <span> FR</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- زر الوضع الداكن الدائري -->
+        <button id="theme-toggle" class="theme-btn" title="تغيير النمط">
+    <!-- أيقونة الشمس (تظهر في النمط الفاتح) -->
+    <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <!-- أيقونة القمر (تظهر في النمط الداكن) -->
+    <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+</button>
+    </div>
+</header>
+
+    <!-- قسم الترحيب -->
+    <section id="hero" class="hero-section">
+    <div class="hero-card-box">
+
+        <!-- حاوية صور الواجهة للتبديل التلقائي بين الوضع المضيء والمظلم -->
+
+            <div class="hero-logo-container">
+        <img src="images/Interface_white_mode.png" alt="Interface Light Mode" class="hero-logo logo-light-img">
+        <img src="images/Interface_dark_mode.png" alt="Interface Dark Mode" class="hero-logo logo-dark-img">
+                </div>
+        
+        <p class="hero-subtitle" 
+           data-en="We provide cutting-edge power electronics & industrial technology solutions." 
+           data-fr="Nous fournissons des solutions de pointe en électronique de puissance et technologies industrielles." 
+           data-ar="نقدم حلولاً متقدمة في إلكترونيات القدرة والتكنولوجيا الصناعية.">
+           نقدم حلولاً متقدمة في إلكترونيات القدرة والتكنولوجيا الصناعية.
+        </p>
+        <a href="#contact" class="btn" 
+           data-en="Contact Us" 
+           data-fr="Contactez-nous" 
+           data-ar="تواصل معنا">تواصل معنا</a>
+    </div>
+</section>
+
+    <!-- قسم من نحن -->
+    
+<section id="about">
+  <!-- عنوان تقني أنيق موحد -->
+  <div class="tech-header-wrapper">
+   <!-- <div class="about-bg-container">
+        <img src="images/about_us_dark_mode.jpg" alt="About Us Light Background" class="bg-img light-bg">
+        <img src="images/about_us_dark_mode.jpg" alt="About Us Dark Background" class="bg-img dark-bg">
+    </div>-->
+    <h2
+      class="tech-title"
+      data-en="About Us"
+      data-fr="À propos de nous"
+      data-ar="من نحن"
+    >
+      من نحن
+    </h2>
+  </div>
+
+  <!-- النص داخل إطار تقني أنيق (.feasibility-box) -->
+  <div class="feasibility-box extended-box">
+  <div class="about-grid">
+    <!-- قسم النص الحلي مع احتفاظه الكامل بكافة البيانات والترجمات -->
+    <div class="about-text-content">
+      <p
+        class="about-text"
+        data-en="ANNABIUM INDUSTRIES is an emerging Algerian engineering and technology venture focused on power electronics, industrial power solutions, and advanced electrical engineering. Our journey begins with the development of Switched-Mode Power Supplies (SMPS), with the ambition of transforming engineering prototypes into reliable, manufacturable, and commercially competitive industrial products. Building on our prototype development progress, we aim to establish a robust product platform designed to meet the practical requirements of automation systems, industrial control equipment, and other applications requiring dependable DC power. We believe that industrial capability is built through engineering discipline, continuous testing, manufacturing expertise, and a deep understanding of market needs. Our long-term ambition extends beyond individual products: we aim to contribute to Algeria’s industrial development by building local technological capabilities, developing engineering talent, and creating a foundation for international expansion."
+        data-fr="ANNABIUM INDUSTRIES est une entreprise algérienne émergente spécialisée dans l’ingénierie et les technologies, axée sur l’électronique de puissance, les solutions d’alimentation électrique industrielles et l’ingénierie électrique avancée. Notre aventure débute par le développement d’alimentations à découpage (Switched-Mode Power Supplies – SMPS), avec l’ambition de transformer des prototypes d’ingénierie en produits industriels fiables, industrialisables et compétitifs sur le marché. Forts des progrès réalisés dans le développement de nos prototypes, nous ambitionnons de mettre en place une plateforme de produits robuste, conçue pour répondre aux exigences pratiques des systèmes d’automatisation, des équipements de commande industrielle et d’autres applications nécessitant une alimentation continue fiable. Nous sommes convaincus que la capacité industrielle repose sur la rigueur de l’ingénierie, les essais continus, le savoir-faire en fabrication et une compréhension approfondie des besoins du marché. Notre ambition à long terme dépasse le développement de produits individuels : nous souhaitons contribuer au développement industriel de l’Algérie en renforçant les capacités technologiques locales, en développant les compétences en ingénierie et en créant les bases d’une expansion à l’international."
+        data-ar="ANNABIUM INDUSTRIES هي مؤسسة جزائرية ناشئة في مجال الهندسة والتكنولوجيا، تركز على إلكترونيات القدرة، وحلول التغذية الكهربائية الصناعية، والهندسة الكهربائية المتقدمة. تنطلق رحلتنا من تطوير مزودات الطاقة ذات نمط التبديل (Switched-Mode Power Supplies – SMPS)، بطموح يتمثل في تحويل النماذج الأولية الهندسية إلى منتجات صناعية موثوقة، قابلة للتصنيع على نطاق صناعي، وقادرة على المنافسة تجاريًا. واستنادًا إلى التقدم الذي أحرزناه في تطوير نماذجنا الأولية، نسعى إلى إنشاء منصة منتجات متينة ومتكاملة، مصممة لتلبية المتطلبات العملية لأنظمة الأتمتة، ومعدات التحكم الصناعي، وغيرها من التطبيقات التي تتطلب تغذية موثوقة بالتيار المستمر (DC). نؤمن بأن بناء القدرات الصناعية يرتكز على الانضباط الهندسي، والاختبارات المستمرة، والخبرة في التصنيع، والفهم العميق لاحتياجات السوق. يتجاوز طموحنا على المدى الطويل تطوير منتجات منفردة؛ إذ نسعى إلى المساهمة في التنمية الصناعية للجزائر من خلال تعزيز القدرات التكنولوجية المحلية، وتنمية الكفاءات الهندسية، وإرساء قاعدة متينة للتوسع في الأسواق الدولية."
+      >
+        <strong>ANNABIUM INDUSTRIES</strong> تُعد ANNABIUM INDUSTRIES مؤسسة جزائرية ناشئة في مجال الهندسة والتكنولوجيا، تركز على إلكترونيات القدرة، وحلول التغذية الكهربائية الصناعية، والهندسة الكهربائية المتقدمة.<br><br>
+        تنطلق رحلتنا من تطوير مزوّدات الطاقة ذات نمط التبديل (SMPS)، بطموح يتمثل في تحويل النماذج الأولية الهندسية إلى منتجات صناعية موثوقة، وقابلة للتصنيع على نطاق صناعي، وقادرة على المنافسة تجاريًا.<br><br>
+        واستنادًا إلى التقدم الذي أحرزناه في تطوير نماذجنا الأولية، نسعى إلى إنشاء منصة متكاملة ومتينة من المنتجات، مصممة لتلبية المتطلبات العملية لأنظمة الأتمتة، ومعدات التحكم الصناعي، وغيرها من التطبيقات التي تتطلب تغذية كهربائية موثوقة بالتيار المستمر (DC).<br><br>
+        نؤمن بأن بناء القدرات الصناعية يرتكز على الانضباط الهندسي، والاختبارات المستمرة، والخبرة في التصنيع، والفهم العميق لاحتياجات السوق.<br><br>
+        يتجاوز طموحنا على المدى الطويل تطوير منتجات منفردة؛ إذ نسعى إلى المساهمة في التنمية الصناعية للجزائر من خلال تعزيز القدرات التكنولوجية المحلية، وتنمية الكفاءات الهندسية، وإرساء قاعدة متينة للتوسع في الأسواق الدولية.
+      </p>
+    </div>
+
+    <!-- إضافة حاوية الصور التفاعلية الخاصة بـ Light Mode و Dark Mode -->
+    
+  </div>
+</div>
+</section>
+    <!-- قسم خدماتنا -->
+    <!-- قسم الخدمات -->
+<section id="services">
+            <div class="tech-header-wrapper">
+                 <h2 class="tech-title" 
+                    data-en="Our Services" 
+                    data-fr="Nos Services" 
+                    data-ar="خدماتنا">
+            خدماتنا
+        </h2>
+    </div>
+    
+    <div class="services-container">
+        
+        <!-- البطاقة الأولى -->
+        <div class="service-card">
+            
+            <!-- ======================================================= -->
+            <!-- 📷 / ⚡ قسم إدخال الأيقونات والصور (مخصص لإضافتها لاحقاً) -->
+            <!-- ======================================================= -->
+            <div class="card-media">
+                <!-- لإضافة صورة لاحقاً: أزل التعليق عن السطر التالي وضَع مسار الصورة -->
+                <!-- <img src="images/service1.png" alt="Service 1 Image"> -->
+                
+                <!-- الأيقونة الذكية (Lucide Icon) -->
+                <div class="card-icon">
+                    <i data-lucide="cpu"></i>
+                </div>
+            </div>
+            <!-- ======================================================= -->
+
+            <h3 data-en="Power Electronics & SMPS Development" 
+                data-fr="Électronique de puissance et développement d’alimentations à découpage (SMPS)" 
+                data-ar="إلكترونيات القدرة وتطوير مزوّدات الطاقة ذات نمط التبديل (SMPS)">
+                إلكترونيات القدرة وتطوير مزوّدات الطاقة ذات نمط التبديل (SMPS)
+            </h3>
+            
+            <p data-en="Development and engineering of switching power supply solutions, beginning with 24 V DC applications for industrial automation and control. Focus areas include design, prototyping, validation, reliability, and manufacturability." 
+               data-fr="Développement et ingénierie de solutions d’alimentation à découpage, en commençant par des applications en 24 V CC destinées à l’automatisation et au contrôle industriels. Nos axes prioritaires comprennent la conception, le prototypage, la validation, la fiabilité et l’aptitude à la fabrication industrielle." 
+               data-ar="تطوير وهندسة حلول مزوّدات الطاقة ذات نمط التبديل (SMPS)، بدءًا من تطبيقات 24 فولت بالتيار المستمر (24 V DC) المخصصة للأتمتة والتحكم الصناعي. تشمل مجالات تركيزنا التصميم، وإنشاء النماذج الأولية، والتحقق من الأداء، والموثوقية، وقابلية التصنيع على نطاق صناعي.">
+               تطوير وهندسة حلول مزوّدات الطاقة ذات نمط التبديل (SMPS)، بدءًا من تطبيقات 24 فولت بالتيار المستمر (24 V DC) المخصصة للأتمتة والتحكم الصناعي. تشمل مجالات تركيزنا التصميم، وإنشاء النماذج الأولية، والتحقق من الأداء، والموثوقية، وقابلية التصنيع على نطاق صناعي.
+            </p>
+        </div>
+
+        <!-- البطاقة الثانية -->
+        <div class="service-card">
+            
+            <!-- ======================================================= -->
+            <!-- 📷 / ⚡ قسم إدخال الأيقونات والصور (مخصص لإضافتها لاحقاً) -->
+            <!-- ======================================================= -->
+            <div class="card-media">
+                <!-- <img src="images/service2.png" alt="Service 2 Image"> -->
+                
+                <div class="card-icon">
+                    <i data-lucide="zap"></i>
+                </div>
+            </div>
+            <!-- ======================================================= -->
+
+            <h3 data-en="Advanced Industrial Power Solutions" 
+                data-fr="Solutions avancées d’alimentation électrique industrielle" 
+                data-ar="حلول متقدمة للتغذية الكهربائية الصناعية">
+                حلول متقدمة للتغذية الكهربائية الصناعية
+            </h3>
+            
+            <p data-en="A future development direction focused on three-phase power conversion and higher-power solutions for demanding industrial applications, subject to engineering validation and market requirements." 
+               data-fr="Une orientation future de développement axée sur la conversion de puissance triphasée et les solutions de puissance supérieure destinées aux applications industrielles exigeantes, sous réserve de validation technique et des exigences du marché." 
+               data-ar="توجّه مستقبلي للتطوير يركز على تحويل الطاقة الكهربائية ثلاثية الطور وتطوير حلول ذات قدرات طاقة أعلى، مخصصة للتطبيقات الصناعية ذات المتطلبات الصعبة، وذلك رهناً بالتحقق الهندسي واستيفاء متطلبات السوق.">
+               توجّه مستقبلي للتطوير يركز على تحويل الطاقة الكهربائية ثلاثية الطور وتطوير حلول ذات قدرات طاقة أعلى، مخصصة للتطبيقات الصناعية ذات المتطلبات الصعبة، وذلك رهناً بالتحقق الهندسي واستيفاء متطلبات السوق.
+            </p>
+        </div>
+
+        <!-- البطاقة الثالثة -->
+        <div class="service-card">
+            
+            <!-- ======================================================= -->
+            <!-- 📷 / ⚡ قسم إدخال الأيقونات والصور (مخصص لإضافتها لاحقاً) -->
+            <!-- ======================================================= -->
+            <div class="card-media">
+                <!-- <img src="images/service3.png" alt="Service 3 Image"> -->
+                
+                <div class="card-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+            </div>
+            <!-- ======================================================= -->
+
+            <h3 data-en="Electrical Engineering & R&D" 
+                data-fr="Ingénierie électrique et recherche & développement (R&D)" 
+                data-ar="الهندسة الكهربائية والبحث والتطوير (R&D)">
+                الهندسة الكهربائية والبحث والتطوير (R&D)
+            </h3>
+            
+            <p data-en="Applied research, electronics development, circuit analysis, prototyping, testing, and continuous product improvement." 
+               data-fr="Recherche appliquée, développement électronique, analyse de circuits, prototypage, essais et amélioration continue des produits." 
+               data-ar="البحث التطبيقي، وتطوير الإلكترونيات، وتحليل الدارات الكهربائية، وإنشاء النماذج الأولية، والاختبارات، والتحسين المستمر للمنتجات.">
+               البحث التطبيقي، وتطوير الإلكترونيات، وتحليل الدارات الكهربائية، وإنشاء النماذج الأولية، والاختبارات، والتحسين المستمر للمنتجات.
+            </p>
+        </div>
+
+        <!-- البطاقة الرابعة -->
+        <div class="service-card">
+            
+            <!-- ======================================================= -->
+            <!-- 📷 / ⚡ قسم إدخال الأيقونات والصور (مخصص لإضافتها لاحقاً) -->
+            <!-- ======================================================= -->
+            <div class="card-media">
+                <!-- <img src="images/service4.png" alt="Service 4 Image"> -->
+                
+                <div class="card-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+            </div>
+            <!-- ======================================================= -->
+
+            <h3 data-en="Engineering Education & Technical Training" 
+                data-fr="Formation en ingénierie et formation technique" 
+                data-ar="التعليم الهندسي والتدريب التقني">
+                التعليم الهندسي والتدريب التقني
+            </h3>
+            
+            <p data-en="A planned training activity designed to help develop practical engineering skills and prepare technical talent for industrial careers in Algeria and international markets." 
+               data-fr="Une activité de formation prévue visant à développer les compétences pratiques en ingénierie et à préparer les talents techniques aux carrières industrielles en Algérie et sur les marchés internationaux." 
+               data-ar="نشاط تدريبي مخطط له، يهدف إلى تطوير المهارات الهندسية التطبيقية وتأهيل الكفاءات التقنية للعمل في المجالات الصناعية داخل الجزائر وفي الأسواق الدولية.">
+               نشاط تدريبي مخطط له، يهدف إلى تطوير المهارات الهندسية التطبيقية وتأهيل الكفاءات التقنية للعمل في المجالات الصناعية داخل الجزائر وفي الأسواق الدولية.
+            </p>
+        </div>
+
+    </div>
+</section>
+    <!-- قسم المميزات -->
+    <!-- قسم المميزات (Features) -->
+<section id="features">
+    <div class="tech-header-wrapper">
+        <h2 class="tech-title" 
+            data-en="Our Advantages" 
+            data-fr="Nos atouts" 
+            data-ar="نقاط قوتنا">
+            نقاط قوتنا
+        </h2>
+    </div>
+    
+    <div class="features-container">
+        
+        <!-- البطاقة الأولى -->
+        <div class="feature-card">
+            <div class="feature-header" onclick="toggleFeature(this)">
+                <h3 data-en="Reliability by Design" data-fr="La fiabilité dès la conception" data-ar="الموثوقية منذ مرحلة التصميم">الموثوقية منذ مرحلة التصميم</h3>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="feature-content">
+                <p data-en="We aim to develop products around measurable performance, systematic testing, protection
+mechanisms, and long-term operational stability." 
+                   data-fr="Nous visons à développer des produits fondés sur des performances mesurables, des essais systématiques, des mécanismes de protection et une stabilité opérationnelle à long terme." 
+                   data-ar="نسعى إلى تطوير منتجات ترتكز على أداء قابل للقياس، واختبارات منهجية، وآليات للحماية، واستقرار تشغيلي على المدى الطويل.">
+                   ننسعى إلى تطوير منتجات ترتكز على أداء قابل للقياس، واختبارات منهجية، وآليات للحماية، واستقرار تشغيلي على المدى الطويل.
+                </p>
+            </div>
+        </div>
+
+        <!-- البطاقة الثانية -->
+        <div class="feature-card">
+            <div class="feature-header" onclick="toggleFeature(this)">
+                <h3 data-en="Designed for Manufacturing" data-fr="Conçu pour la fabrication industrielle" data-ar="مصمّم للتصنيع الصناعي">مصمّم للتصنيع الصناعي</h3>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="feature-content">
+                <p data-en="We seek to move beyond laboratory prototypes toward designs that can be manufactured
+consistently, tested efficiently, and integrated into industrial production." 
+                   data-fr="Nous cherchons à dépasser le stade des prototypes de laboratoire pour développer des conceptions pouvant être fabriquées de manière reproductible, testées efficacement et intégrées aux processus de production industrielle." 
+                   data-ar="نسعى إلى تجاوز مرحلة النماذج الأولية المخبرية نحو تطوير تصاميم قابلة للتصنيع بصورة متسقة، والاختبار بكفاءة، والدمج ضمن عمليات الإنتاج الصناعي.">
+                   نسعى إلى تجاوز مرحلة النماذج الأولية المخبرية نحو تطوير تصاميم قابلة للتصنيع بصورة متسقة، والاختبار بكفاءة، والدمج ضمن عمليات الإنتاج الصناعي.
+                </p>
+            </div>
+        </div>
+
+        <!-- البطاقة الثالثة -->
+        <div class="feature-card">
+            <div class="feature-header" onclick="toggleFeature(this)">
+                <h3 data-en="Engineering-Led Development" data-fr="Un développement guidé par l’ingénierie" data-ar="تطوير قائم على أسس هندسية">تطوير قائم على أسس هندسية</h3>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="feature-content">
+                <p data-en="Our approach prioritises technical validation, iterative improvement, and practical industrial
+requirements over marketing claims." 
+                   data-fr="Notre approche privilégie la validation technique, l’amélioration itérative et les exigences pratiques du secteur industriel plutôt que les arguments marketing." 
+                   data-ar="يعطي نهجنا الأولوية للتحقق التقني، والتحسين التدريجي، والمتطلبات العملية للقطاع الصناعي بدلًا من الادعاءات التسويقية.">
+                  يعطي نهجنا الأولوية للتحقق التقني، والتحسين التدريجي، والمتطلبات العملية للقطاع الصناعي بدلًا من الادعاءات التسويقية. </p>
+            </div>
+        </div>
+
+        <!-- البطاقة الرابعة -->
+        <div class="feature-card">
+            <div class="feature-header" onclick="toggleFeature(this)">
+                <h3 data-en="Local Foundations, Global Ambitions" data-fr="Des fondations locales, des ambitions mondiales" data-ar="جذور محلية وطموحات عالمية">جذور محلية وطموحات عالمية</h3>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="feature-content">
+                <p data-en="We aim to build experience in the Algerian market, strengthen local industrial relationships, and progressively prepare our products for international markets." 
+                   data-fr="Nous ambitionnons d’acquérir de l’expérience sur le marché algérien, de renforcer les partenariats industriels locaux et de préparer progressivement nos produits à leur commercialisation sur les marchés internationaux." 
+                   data-ar="نسعى إلى اكتساب الخبرة في السوق الجزائرية، وتعزيز علاقات التعاون الصناعي محليًا، والعمل تدريجيًا على تهيئة منتجاتنا لدخول الأسواق الدولية.">
+                   نسعى إلى اكتساب الخبرة في السوق الجزائرية، وتعزيز علاقات التعاون الصناعي محليًا، والعمل تدريجيًا على تهيئة منتجاتنا لدخول الأسواق الدولية.
+                </p>
+            </div>
+        </div>
+
+        <!-- البطاقة الخامسة -->
+        <div class="feature-card">
+            <div class="feature-header" onclick="toggleFeature(this)">
+                <h3 data-en="A Vision for Intelligent Products" data-fr="Une vision pour des produits intelligents" data-ar="رؤية نحو منتجات ذكية">رؤية نحو منتجات ذكية</h3>
+                <button class="toggle-btn">+</button>
+            </div>
+            <div class="feature-content">
+                <p data-en="Our long-term R&D; direction includes connected power systems, operational data analysis, and
+simulation-assisted development to improve future product generations." 
+                   data-fr="Notre orientation à long terme en matière de recherche et développement (R&D) comprend les systèmes d’alimentation connectés, l’analyse des données opérationnelles et le développement assisté par simulation, afin d’améliorer les futures générations de produits." 
+                   data-ar="يشمل توجهنا طويل الأمد في مجال البحث والتطوير (R&D) أنظمة التغذية الكهربائية المتصلة، وتحليل بيانات التشغيل، والتطوير المدعوم بالمحاكاة، بهدف تحسين الأجيال المستقبلية من المنتجات.">
+                   يشمل توجهنا طويل الأمد في مجال البحث والتطوير (R&D) أنظمة التغذية الكهربائية المتصلة، وتحليل بيانات التشغيل، والتطوير المدعوم بالمحاكاة، بهدف تحسين الأجيال المستقبلية من المنتجات.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+            <!-- قسم الرؤية (Our Vision) -->
+<!-- قسم الرؤية (Our Vision) -->
+<section id="vision">
+    <div class="tech-header-wrapper">
+        <h2 class="tech-title" 
+            data-en="Our Vision" 
+            data-fr="Notre Vision" 
+            data-ar="رؤيتنا">
+            رؤيتنا
+        </h2>
+    </div>
+    
+    <!-- وضع النصوص داخل الإطار الاحترافي (.feasibility-box) -->
+    <div class="feasibility-box">
+        <p class="vision-lead" 
+           data-en="From Local Engineering to Intelligent Manufacturing." 
+           data-fr="De l'ingénierie locale à la fabrication intelligente." 
+           data-ar="من الهندسة المحلية إلى التصنيع الذكي.">
+           من الهندسة المحلية إلى التصنيع الذكي.
+        </p>
+
+        <p class="vision-subtext" 
+           data-en="Our vision is to build ANNABIUM INDUSTRIES into a competitive Algerian industrial technology company, progressing from power electronics development to advanced manufacturing and intelligent engineering systems." 
+           data-fr="Notre vision est de faire d'ANNABIUM INDUSTRIES une entreprise technologique industrielle algérienne compétitive, évoluant du développement de l'électronique de puissance vers une fabrication avancée et des systèmes d'ingénierie intelligents." 
+           data-ar="ترتكز رؤيتنا على بناء شركة Annabium Industries لتصبح مؤسسة جزائرية منافسة في مجالات التكنولوجيا الصناعية، متدرجة من تطوير إلكترونيات القدرة إلى التصنيع المتقدم وأنظمة الهندسة الذكية.">
+          ترتكز رؤيتنا على بناء شركة Annabium Industries لتصبح مؤسسة جزائرية منافسة في مجالات التكنولوجيا الصناعية، متدرجة من تطوير إلكترونيات القدرة إلى التصنيع المتقدم وأنظمة الهندسة الذكية.
+        </p>
+    </div>
+
+
+    <!-- المخطط الزمني للمراحل الأربع -->
+    <div class="timeline-container">
+        
+        <!-- المرحلة الأولى -->
+        <div class="timeline-card">
+            <div class="timeline-badge">Phase I</div>
+            <div class="card-icon"><i data-lucide="shield-check"></i></div>
+            <h3 data-en="Phase I — Reliable Industrial Products" 
+                data-fr="Phase I — Produits industriels fiables" 
+                data-ar="المرحلة الأولى — منتجات صناعية موثوقة">
+                المرحلة الأولى — منتجات صناعية موثوقة
+            </h3>
+            <p data-en="Transform our current SMPS prototype development into a stable, professionally engineered product for conventional industrial applications, particularly automation and control. Establish repeatable testing, manufacturing processes, and the foundations for commercial deployment." 
+               data-fr="Transformer notre développement actuel de prototypes SMPS en un produit stable et conçu de manière professionnelle pour les applications industrielles classiques, en particulier l'automatisation et le contrôle. Établir des essais répétables, des procédés de fabrication et les bases d'un déploiement commercial." 
+               data-ar="تحويل نموذجنا الأولي لمزوّدات الطاقة (SMPS) إلى منتج مستقر ومصمم بأسلوب هندسي احترافي مخصص للتطبيقات الصناعية، لا سيما الأتمتة والتحكم. وإرساء بروتوكولات اختبار متكررة، وعمليات تصنيع، وقواعد للاستخدام التجاري.">
+                تحويل نموذجنا الأولي لمزوّدات الطاقة (SMPS) إلى منتج مستقر ومصمم بأسلوب هندسي احترافي مخصص للتطبيقات الصناعية، لا سيما الأتمتة والتحكم. وإرساء بروتوكولات اختبار متكررة، وعمليات تصنيع، وقواعد للاستخدام التجاري.
+            </p>
+        </div>
+
+        <!-- المرحلة الثانية -->
+        <div class="timeline-card">
+            <div class="timeline-badge">Phase II</div>
+            <div class="card-icon"><i data-lucide="globe"></i></div>
+            <h3 data-en="Phase II — Industrial Expansion & Export" 
+                data-fr="Phase II — Expansion industrielle et exportation" 
+                data-ar="المرحلة الثانية — التوسع الصناعي والتصدير">
+                المرحلة الثانية — التوسع الصناعي والتصدير
+            </h3>
+            <p data-en="Build relationships with Algerian industrial customers, gain practical market experience, strengthen manufacturing capabilities, and progressively expand toward international markets. Develop a higher-power, three-phase product platform for demanding industrial applications." 
+               data-fr="Établir des relations avec les clients industriels algériens, acquérir une expérience pratique du marché, renforcer les capacités de fabrication et s'étendre progressivement vers les marchés internationaux. Développer une plateforme de produits triphasés de puissance supérieure." 
+               data-ar="بناء علاقات مع العملاء في القطاع الصناعي الجزائري، واكتساب خبرة ميدانية بالسوق، وتعزيز القدرات التصنيعية، والتوسع التدريجي نحو الأسواق الدولية. إضافة إلى تطوير منصة منتجات ثلاثية الطور وبقدرات طاقة أعلى للتطبيقات الشاقة.">
+                بناء علاقات مع العملاء في القطاع الصناعي الجزائري، واكتساب خبرة ميدانية بالسوق، وتعزيز القدرات التصنيعية، والتوسع التدريجي نحو الأسواق الدولية. إضافة إلى تطوير منصة منتجات ثلاثية الطور وبقدرات طاقة أعلى للتطبيقات الشاقة.
+            </p>
+        </div>
+
+        <!-- المرحلة الثالثة -->
+        <div class="timeline-card">
+            <div class="timeline-badge">Phase III</div>
+            <div class="card-icon"><i data-lucide="cpu"></i></div>
+            <h3 data-en="Phase III — AI-Integrated & IoT-Enabled Power Systems" 
+                data-fr="Phase III — Systèmes d'alimentation intégrés à l'IA et à l'IoT" 
+                data-ar="المرحلة الثالثة — أنظمة طاقة مدعومة بالذكاء الاصطناعي وإنترنت الأشياء">
+                المرحلة الثالثة — أنظمة طاقة مدعومة بالذكاء الاصطناعي وإنترنت الأشياء
+            </h3>
+            <p data-en="Our long-term ambition is to develop intelligent power products that combine carefully designed sensing, secure connectivity, IoT-based monitoring, and AI-assisted analytics to provide continuous condition monitoring and predictive fault warnings." 
+               data-fr="Notre ambition à long terme est de développer des produits d'alimentation intelligents combinant capteurs avancés, connectivité sécurisée, surveillance IoT et analyses assistées par l'IA pour offrir une surveillance continue et des alertes prédictives." 
+               data-ar="طموحنا طويل الأمد يكمن في تطوير منتجات طاقة ذكية تجمع بين الاستشعار الدقيق، الاتصال الآمن، المراقبة القائمة على إنترنت الأشياء (IoT)، والتحليلات المدعومة بالذكاء الاصطناعي لتقديم مراقبة مستمرة للتشغيل وتنبؤات مبكرة بالأعطال.">
+                طموحنا طويل الأمد يكمن في تطوير منتجات طاقة ذكية تجمع بين الاستشعار الدقيق، الاتصال الآمن، المراقبة القائمة على إنترنت الأشياء (IoT)، والتحليلات المدعومة بالذكاء الاصطناعي لتقديم مراقبة مستمرة للتشغيل وتنبؤات مبكرة بالأعطال.
+            </p>
+        </div>
+
+        <!-- المرحلة الرابعة -->
+        <div class="timeline-card">
+            <div class="timeline-badge">Phase IV</div>
+            <div class="card-icon"><i data-lucide="layers"></i></div>
+            <h3 data-en="Phase IV — Simulation-Assisted R&D & Broader Manufacturing" 
+                data-fr="Phase IV — R&D assistée par simulation et fabrication élargie" 
+                data-ar="المرحلة الرابعة — بحث وتطوير قائم على المحاكاة وتوسع تصنيعي شامل">
+                المرحلة الرابعة — بحث وتطوير قائم على المحاكاة وتوسع تصنيعي شامل
+            </h3>
+            <p data-en="Explore virtual models, digital-twin techniques, and AI-assisted analysis to support design iteration. Expand into complementary electrical and electronic products, advanced manufacturing, and technical education to build export-oriented capabilities." 
+               data-fr="Explorer les modèles virtuels, les jumeaux numériques et l'analyse assistée par l'IA. S'étendre vers des produits électriques et électroniques complémentaires, la fabrication avancée et la formation technique pour créer des capacités axées sur l'exportation." 
+               data-ar="استكشاف النماذج الافتراضية، تقنيات التوأم الرقمي (Digital-Twin)، والتحليل بالذكاء الاصطناعي لتطوير التصاميم. والتوسع نحو منتجات كهربائية وإلكترونية مكملة، وتصنيع متقدم، وتدريب تقني لبناء قدرات صناعية موجهة للتصدير.">
+                استكشاف النماذج الافتراضية، تقنيات التوأم الرقمي (Digital-Twin)، والتحليل بالذكاء الاصطناعي لتطوير التصاميم. والتوسع نحو منتجات كهربائية وإلكترونية مكملة، وتصنيع متقدم، وتدريب تقني لبناء قدرات صناعية موجهة للتصدير.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- قسم الجدوى التقنية وخارطة الطريق -->
+<section id="roadmap">
+    <!-- عنوان تقني احترافي كبير -->
+<div class="tech-header-wrapper">
+    <h2 class="tech-title" 
+        data-en="Technical Feasibility & Roadmap" 
+        data-fr="Faisabilité technique et feuille de route" 
+        data-ar="الجدوى التقنية وخارطة الطريق">
+        الجدوى التقنية وخارطة الطريق
+    </h2>
+</div>
+    
+    <div class="feasibility-box">
+        <p data-en="The concept is technically feasible in stages. The strongest starting point is to create a reliable SMPS with measurement and monitoring features, then build analytics on top of trustworthy data."
+           data-fr="Le concept est techniquement réalisable par étapes. Le point de départ le plus solide consiste à créer une alimentation SMPS fiable dotée de fonctionnalités de mesure et de surveillance, puis à développer des analyses sur des données fiables."
+           data-ar="الفكرة قابلة للتحقيق تقنياً على مراحل متدرجة. إن أفضل نقطة انطلاق ليست الوعود بمنتجات معقدة مباشرة، بل بناء مزود طاقة (SMPS) موثوق مزود بميزات القياس والمراقبة، ثم بناء التحليلات والذكاء بناءً على بيانات موثوقة.">
+           الفكرة قابلة للتحقيق تقنياً على مراحل متدرجة. إن أفضل نقطة انطلاق ليست الوعود بمنتجات معقدة مباشرة، بل بناء مزود طاقة (SMPS) موثوق مزود بميزات القياس والمراقبة، ثم بناء التحليلات والذكاء بناءً على بيانات موثوقة.
+        </p>
+    </div>
+
+    <!-- جدول خارطة الطريق والتطوير -->
+    <div class="table-responsive">
+        <table class="roadmap-table">
+            <thead>
+                <tr>
+                    <th data-en="Stage" data-fr="Étape" data-ar="المرحلة">المرحلة</th>
+                    <th data-en="Deliverable" data-fr="Livrable" data-ar="المخرجات">المخرجات</th>
+                    <th data-en="Evidence before moving on" data-fr="Preuves avant passage" data-ar="معايير التحقق والانتقال">معايير التحقق والانتقال</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="stage-num">1</span> <strong data-en="Core SMPS" data-fr="SMPS de base" data-ar="مزود الطاقة الأساسي">مزود الطاقة الأساسي</strong></td>
+                    <td data-en="Stable power hardware and protection" data-fr="Matériel d'alimentation stable et protections" data-ar="عتاد طاقة مستقر وآليات حماية">عتاد طاقة مستقر وآليات حماية</td>
+                    <td data-en="Bench tests, thermal tests, load-range validation, documented protection behaviour" data-fr="Essais sur banc, tests thermiques, validation sous charge, comportement de protection documenté" data-ar="اختبارات طاولة العمل، الاختبارات الحرارية، التحقق من نطاق الحمل، وتوثيق استجابة الحماية">اختبارات طاولة العمل، الاختبارات الحرارية، التحقق من نطاق الحمل، وتوثيق استجابة الحماية</td>
+                </tr>
+                <tr>
+                    <td><span class="stage-num">2</span> <strong data-en="Measurement" data-fr="Mesure" data-ar="أنظمة القياس">أنظمة القياس</strong></td>
+                    <td data-en="Calibrated voltage/current/temperature data" data-fr="Données étalonnées de tension/courant/température" data-ar="بيانات معايرة للجهد والتيار درجة الحرارة">بيانات معايرة للجهد والتيار درجة الحرارة</td>
+                    <td data-en="Accuracy, repeatability, isolation and fault-injection tests" data-fr="Précision, répétabilité, isolation et tests d'injection de défauts" data-ar="الدقة، تكرارية النتائج، العزل، واختبارات حاقن الأعطال">الدقة، تكرارية النتائج، العزل، واختبارات حاقن الأعطال</td>
+                </tr>
+                <tr>
+                    <td><span class="stage-num">3</span> <strong data-en="Connectivity" data-fr="Connectivité" data-ar="الاتصال والشبكات">الاتصال والشبكات</strong></td>
+                    <td data-en="Secure local monitoring and event history" data-fr="Surveillance locale sécurisée et historique des événements" data-ar="مراقبة محلية آمنة وسجل للأحداث التشغيلية">مراقبة محلية آمنة وسجل للأحداث التشغيلية</td>
+                    <td data-en="Communication-loss behaviour, access controls, data integrity tests" data-fr="Comportement en cas de perte de communication, contrôle d'accès, tests d'intégrité des données" data-ar="استجابة النظام عند انقطاع الاتصال، ضوابط الوصول، واختبارات سلامة البيانات">استجابة النظام عند انقطاع الاتصال، ضوابط الوصول، واختبارات سلامة البيانات</td>
+                </tr>
+                <tr>
+                    <td><span class="stage-num">4</span> <strong data-en="Analytics" data-fr="Analyse" data-ar="تحليل البيانات">تحليل البيانات</strong></td>
+                    <td data-en="Alarms, trends and anomaly detection" data-fr="Alarmes, tendances et détection d'anomalies" data-ar="تنبيهات تلقائية، مراقبة الاتجاهات، واكتشاف الشذوذ">تنبيهات تلقائية، مراقبة الاتجاهات، واكتشاف الشذوذ</td>
+                    <td data-en="Benchmarks, false-alarm review, representative data and validation" data-fr="Paliers de référence, examen des fausses alarmes, données représentatives et validation" data-ar="المقارنات المرجعية، مراجعة الإنذارات الخاطئة، والتحقق من نماذج البيانات">المقارنات المرجعية، مراجعة الإنذارات الخاطئة، والتحقق من نماذج البيانات</td>
+                </tr>
+                <tr>
+                    <td><span class="stage-num">5</span> <strong data-en="Predictive Features" data-fr="Fonctionnalités prédictives" data-ar="الخصائص التنبؤية">الخصائص التنبؤية</strong></td>
+                    <td data-en="Risk indicators for selected fault modes" data-fr="Indicateurs de risque pour les modes de défaillance sélectionnés" data-ar="مؤشرات الخطورة لأنماط أعطال محددة">مؤشرات الخطورة لأنماط أعطال محددة</td>
+                    <td data-en="Field evidence, measurable predictive performance, clear limitations" data-fr="Preuves du terrain, performances prédictives mesurables, limites claires" data-ar="أدلة الميدان المباشرة، أداء تنبؤي قابل للقياس، وتحديد القيود التشغيلية">أدلة الميدان المباشرة، أداء تنبؤي قابل للقياس، وتحديد القيود التشغيلية</td>
+                </tr>
+                <tr>
+                    <td><span class="stage-num">6</span> <strong data-en="Optimisation" data-fr="Optimisation" data-ar="التحسين والتطوير">التحسين والتطوير</strong></td>
+                    <td data-en="Recommendations and simulation-supported improvements" data-fr="Recommandations et améliorations appuyées par la simulation" data-ar="توصيات عملية وتحسينات مدعومة بالمحاكاة">توصيات عملية وتحسينات مدعومة بالمحاكاة</td>
+                    <td data-en="Controlled trials, measured benefits, safety review" data-fr="Essais contrôlés, avantages mesurés, examen de la sécurité" data-ar="تجارب منضبطة، فوائد آداء مقاسة، ومراجعة معايير السلامة">تجارب منضبطة، فوائد آداء مقاسة، ومراجعة معايير السلامة</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+    <!-- معرض الصور -->
+    <!--<section id="gallery">
+        <h2 data-en="Gallery" data-fr="Galerie" data-ar="معرض الصور">معرض الصور</h2>
+        <div class="gallery-container">
+            <img src="images/project1.jpg" alt="مشروع 1">
+            <img src="images/project2.jpg" alt="مشروع 2">
+            <img src="images/project3.jpg" alt="مشروع 3">
+        </div>
+    </section>
+-->
+    <!-- التواصل -->
+    <section id="contact">
+        <h2 data-en="Contact Us" data-fr="Contactez-nous" data-ar="تواصل معنا">تواصل معنا</h2>
+        <p data-en="For inquiries, reach out via our official email:" data-fr="Pour toute question, contactez-nous par e-mail:" data-ar="لأي استفسارات أو طلبات، يمكنك مراسلتنا عبر البريد الإلكتروني:">لأي استفسارات أو طلبات، يمكنك مراسلتنا عبر البريد الإلكتروني:</p>
+        <p class="gmail-address">📧 <strong>annabium.industries@gmail.com
+</strong></p>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <p data-en="All Rights Reserved © 2026 Annabium Industries" data-fr="Tous droits réservés © 2026 Annabium Industries" data-ar="جميع الحقوق محفوظة © 2026 Annabium Industries">جميع الحقوق محفوظة © 2026 Annabium Industries</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
